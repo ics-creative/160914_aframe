@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>A-Frame Demo 5</title>
+	<script src="../assets/js/aframe-master.min.js"></script>
+</head>
+<body>
+
+<!-- シーン -->
+<a-scene>
+	<!-- 素材 -->
+	<a-assets>
+		<a-asset-item id="cow-obj" src="../assets/obj/spot_quadrangulated.obj"></a-asset-item>
+		<a-asset-item id="cow-mtl" src="../assets/obj/spot_quadrangulated.mtl"></a-asset-item>
+		<img id="sky" src="../assets/images/puydesancy.jpg">
+	</a-assets>
+
+	<!-- 3Dモデル -->
+	<a-entity obj-model="obj: #cow-obj; mtl: #cow-mtl" position="0 1 -2" rotation="0 180 0">
+		<a-animation attribute="rotation"
+					 dur="5000"
+					 to="0 540 0"
+					 easing="ease-in-out-back"
+					 repeat="indefinite"></a-animation>
+	</a-entity>
+
+	<!-- 全天球背景 -->
+	<a-sky src="#sky" rotation="0 -130 0"></a-sky>
+</a-scene>
+</body>
+</html>

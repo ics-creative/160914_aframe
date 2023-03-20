@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>A-Frame Demo 3</title>
+	<script src="../assets/js/aframe-master.min.js"></script>
+</head>
+<body>
+
+<!-- シーン -->
+<a-scene>
+	<!-- 素材 -->
+	<a-assets>
+		<a-asset-item id="cow-obj" src="../assets/obj/spot_quadrangulated.obj"></a-asset-item>
+		<a-asset-item id="cow-mtl" src="../assets/obj/spot_quadrangulated.mtl"></a-asset-item>
+	</a-assets>
+
+	<!-- 3Dモデル -->
+	<a-entity obj-model="obj: #cow-obj; mtl: #cow-mtl" position="0 1 -1.5" rotation="0 135 0"></a-entity>
+
+	<!-- 背景 -->
+	<a-sky color="#fafafa"></a-sky>
+</a-scene>
+</body>
+</html>

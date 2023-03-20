@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>A-Frame Demo 6</title>
+	<script src="../assets/js/aframe-master.min.js"></script>
+</head>
+<body>
+
+<!-- シーン -->
+<a-scene>
+	<!-- 素材 -->
+	<a-assets>
+		<a-asset-item id="cow-obj" src="../assets/obj/spot_quadrangulated.obj"></a-asset-item>
+		<a-asset-item id="cow-mtl" src="../assets/obj/spot_quadrangulated.mtl"></a-asset-item>
+		<img id="sky" src="../assets/images/puydesancy.jpg">
+	</a-assets>
+
+	<!-- カメラ -->
+	<a-camera>
+		<!-- カーソル -->
+		<a-entity cursor="fuse: true; fuseTimeout: 1000">
+			<!-- リング -->
+			<a-ring
+					color="#e74c3c"
+					radius-inner="0.01"
+					radius-outer="0.015"
+					position="0 0 -0.75"></a-ring>
+		</a-entity>
+	</a-camera>
+
+	<!-- 3Dモデル 1 -->
+	<a-entity obj-model="obj: #cow-obj; mtl: #cow-mtl" position="0 0.5 -3" rotation="0 180 0">
+		<a-animation begin="click"
+					 attribute="rotation"
+					 dur="5000"
+					 to="0 540 0"
+					 easing="ease-in-out-back"></a-animation>
+	</a-entity>
+
+	<!-- 3Dモデル 2 -->
+	<a-entity obj-model="obj: #cow-obj; mtl: #cow-mtl" position="0 0.5 1.3" rotation="0 0 0">
+		<a-animation begin="click"
+					 attribute="rotation"
+					 dur="5000"
+					 to="0 360 0"
+					 easing="ease-in-out-back"></a-animation>
+	</a-entity>
+
+	<!-- 3Dモデル 3 -->
+	<a-entity obj-model="obj: #cow-obj; mtl: #cow-mtl" position="3 -0.5 0" rotation="0 90 0">
+		<a-animation begin="click"
+					 attribute="rotation"
+					 dur="5000"
+					 to="0 450 0"
+					 easing="ease-in-out-back"></a-animation>
+	</a-entity>
+
+	<!-- 3Dモデル 4 -->
+	<a-entity obj-model="obj: #cow-obj; mtl: #cow-mtl" position="-3 -0.5 0" rotation="0 270 0">
+		<a-animation begin="click"
+					 attribute="rotation"
+					 dur="5000"
+					 to="0 630 0"
+					 easing="ease-in-out-back"></a-animation>
+	</a-entity>
+
+	<!-- 全天球背景 -->
+	<a-sky src="#sky" rotation="0 -130 0"></a-sky>
+</a-scene>
+</body>
+</html>
